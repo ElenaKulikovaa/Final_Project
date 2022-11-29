@@ -2,8 +2,9 @@ import { makeAutoObservable, runInAction } from "mobx";
 
 class CatalogStore {
     categories = undefined
-    categoryID = 0
+    categoryID = undefined
     productsByCategory = undefined
+    isProductsLoading = false
 
     constructor () {
         makeAutoObservable (this)
@@ -23,15 +24,17 @@ class CatalogStore {
             })
     }
 
-    // loadCategory = (categoryID) => {
-    //     fetch (`https://api.escuelajs.co/api/v1/categories/${categoryID}/products`)
-    //         .then (res=>res.json())
-    //         .then (json=>{
-    //             runInAction(() => {
-    //                 this.productsByCategory = [...json]
-    //             })
-    //         })
-    // }
+    loadCategory = () => {
+        this.isProductsLoading = true
+        fetch (`https://api.escuelajs.co/api/v1/categories/${this.categoryID}/products`)
+            .then (res=>res.json())
+            .then (json=>{
+                runInAction(() => {
+                    this.productsByCategory = [...json]
+                    this.isProductsLoading = false
+                })
+            })
+    }
 
 }
 

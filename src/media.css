@@ -1,0 +1,49 @@
+@media (max-width: 1024px) {
+
+    .category_item {
+        margin: 10px 0;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .burger_menu {
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        right: 20px;
+        top: 16px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .nav_items {
+        display: none;
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(170, 160, 160);
+        z-index: 10;
+        transition: left 2s;
+    }
+
+    .main_title {
+        font-size: 36px;
+        margin-top: 60px;
+    }
+
+    .main_subtitle {
+        font-size: 26px;
+    }
+
+}
