@@ -13,7 +13,7 @@ export const Header = observer (() => {
             <div className="container">
                 <div className="nav_wrapper">
                     <div className={
-                        nav ? 'active' : 'nav_items'
+                        nav ? 'active_burger' : 'nav_items'
                     } >
                         <NavLink className="nav_item" to='/'>Main</NavLink>
                         <NavLink className="nav_item" to='/catalog'>Catalog</NavLink>

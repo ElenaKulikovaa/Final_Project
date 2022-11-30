@@ -16,6 +16,10 @@ footer {
   min-height: 100%;
 }
 
+.footer {
+  min-height: calc(100vh - 80px);
+}
+
 .nav_items {
   display: flex;
   justify-content: center;
